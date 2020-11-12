@@ -11,7 +11,8 @@ import { ToastMessage, useToast } from '../../../hooks/toast';
 import { Container } from './styles';
 
 interface ToastProps {
-  data: ToastMessage;
+  message: ToastMessage;
+  style: object;
 }
 
 const icons = {
@@ -20,27 +21,31 @@ const icons = {
   success: <FiCheckCircle size={24} />,
 };
 
-const Toast: React.FC<ToastProps> = ({ data }) => {
+const Toast: React.FC<ToastProps> = ({ message, style }) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      removeToast(data.id);
+      removeToast(message.id);
     }, 3000);
     return () => {
       clearTimeout(timer);
     };
-  }, [data.id, removeToast]);
+  }, [message.id, removeToast]);
   return (
-    <Container type={data.type} hasDescription={!!data.description}>
-      {icons[data.type || 'info']}
+    <Container
+      type={message.type}
+      hasDescription={!!message.description}
+      style={style}
+    >
+      {icons[message.type || 'info']}
 
       <div>
-        <strong>{data.title}</strong>
-        {data.description && <p>{data.description}</p>}
+        <strong>{message.title}</strong>
+        {message.description && <p>{message.description}</p>}
       </div>
 
-      <button onClick={() => removeToast(data.id)} type="button">
+      <button onClick={() => removeToast(message.id)} type="button">
         <FiXCircle size={18} />
       </button>
     </Container>
