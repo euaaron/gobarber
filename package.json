@@ -1,11 +1,7 @@
 {
-  "name": "gobarber-web",
+  "name": "gobarber-app",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -28,7 +24,7 @@
     "react-spring": "^8.0.27",
     "styled-components": "^5.1.1",
     "typescript": "~3.7.2",
-    "uuid": "^8.3.1",
+    "uuidv4": "^6.2.3",
     "yup": "^0.29.3"
   },
   "eslintConfig": {
@@ -55,10 +51,10 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
-    "@testing-library/react-hooks": "^3.4.2",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/user-event": "^7.1.2",
+    "@testing-library/react-hooks": "^3.4.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
@@ -66,7 +62,6 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
     "@types/testing-library__dom": "^7.5.0",
-    "@types/uuid": "^8.3.0",
     "@types/yup": "^0.29.6",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
